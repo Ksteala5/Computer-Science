@@ -25,7 +25,7 @@ g_int = int(g, 2)
 h_float = float(h)
 i_float = float(i)
 j_int = int(j)
-k_byte = bin(254)
+k_byte = bin(k)
 
 print(a_str)
 print(c_num)
