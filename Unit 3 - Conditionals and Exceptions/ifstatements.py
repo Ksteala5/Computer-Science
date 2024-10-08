@@ -68,3 +68,22 @@ else:
 
 tally_score = str(tally_score)
 print("Your score is " + tally_score + ".")
+
+# String functions are a group of functions that modify strings
+# .lower()
+# .lower() changes string to all lowercase
+# .upper() changes all string to uppercase
+
+# .capitalize() changes the entire string to lowercase, then capitalizes the first letter of the string.
+# Hello World > Hello world
+
+# .title() changes the entire string to titlecase
+# hello world > Hello World
+
+# .swapcase() inverts the capitalization of each character
+# Hello World > hELLO wORLD
+
+
+x= "Lord of the Rings".lower()
+
+print(x)
