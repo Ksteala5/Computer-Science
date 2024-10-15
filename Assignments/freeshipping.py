@@ -23,4 +23,4 @@ def FreeShipping(prime, cost, age, consent):
         print("You get free shipping!")
     else:
         print("No free shipping lmao")
-FreeShipping("no", 65, 18, "no")
+FreeShipping("no", 0, 17, "no")
