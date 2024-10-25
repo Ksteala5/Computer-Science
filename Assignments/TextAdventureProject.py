@@ -1,9 +1,14 @@
+def downlightoff():
+     print("You faintly make out the twisted figure of some sort of beast. On the floor, there is a corpse.")
+
 def downstairsbad():
      print("\nYou make your way downstairs, phone in hand. A heavy weight is in the air, feeling like a thick slurry. The house is unnaturally dark. Audible heavy panting is heard.\n\n")
      light = int(input("Turn on phone flashlight? \n 1. Y \n 2. N\n\n> ").upper())
      if light == 1:
-          print("The glint of inhuman eyes flashes in the dark. You are dead.")
+          print("The glint of inhuman eyes flash in the dark. You are dead.")
           redo1()
+     elif light == 2:
+          print("You decide to not turn on the flashlight, that could give away where you are.")
 
 def downstairsbat():
      print("You grab your old wooden bat and head downstairs cautiously.")
@@ -12,9 +17,10 @@ def downstairstrophy():
      print("You grab the trophy at the base, and head downstairs. The glint of the metal catches the eye of a bloody and horrifying creature, which kills you.")
      redo2()
 
-
 def downstairsstool():
-     print()
+     print("\n\nYou decide to grab the heavy metal stool. Unfortunately, you aren't the strongest, so it feels quite unweildy. You head downstairs, careful not to "+
+           "bang the stool and make noise on the way down.\n")
+     print("\n")
 
 def downstairsgood():
      print("\nUpon arriving downstairs, you see your "+interest+" standing a distance from the window, and staring out. They seem frightened.")
@@ -31,12 +37,10 @@ def weaponchoice():
 
          elif weapon==2:
               weapon = "trophy"
-              print("You pick up the "+weapon+" and head downstairs.")
               downstairstrophy()
 
          elif weapon==3:
               weapon = "stool"
-              print("You pick up the "+weapon+" and head downstairs.")
               downstairsstool()
 
          else:
@@ -57,11 +61,11 @@ def redo1():
           elif redo == 2:
                print("Lame, whatever. Bye.")
           else:
-               print("Not sure what that means... RESTART IT IS! HAHAHAHAHAHAAA (Stop putting in random numbers. Really.)\n\n")
+               print("\n\nNot sure what that means... RESTART IT IS! HAHAHAHAHAHAAA (Stop putting in random numbers. Really.)\n\n")
                start()
 
      except ValueError:
-          print("\n\n\n\n\n\nGet out.\n\n")
+          print("\n\n\n\n\n\nI explained this. Get out.\n\n")
 
 def redo2():
      try:     
@@ -111,8 +115,7 @@ def start():
     else:
          print("Choose ONLY M, F, or O.")
 start()
-
-     
+   
 def go():
         try:
             choice1 = int(input("You are sitting in your room, scrolling through Instagram reels on your phone.'" + name + "!' You"+
