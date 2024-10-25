@@ -9,7 +9,9 @@ def downstairsbat():
      print("You grab your old wooden bat and head downstairs cautiously.")
 
 def downstairstrophy():
-     print()
+     print("You grab the trophy at the base, and head downstairs. The glint of the metal catches the eye of a bloody and horrifying creature, which kills you.")
+     redo2()
+
 
 def downstairsstool():
      print()
@@ -25,7 +27,6 @@ def weaponchoice():
          weapon = int(input("You have a few items that could be used as a weapon in your room. \n 1. Wooden Bat \n 2. Metal Trophy \n 3. Metal Stool\n\n> "))
          if weapon==1:
               weapon = "bat"
-              print("You pick up the "+weapon+" and head downstairs.")
               downstairsbat()
 
          elif weapon==2:
@@ -53,6 +54,21 @@ def redo1():
           if redo == 1:
                print("Yay!")
                go()
+          elif redo == 2:
+               print("Lame, whatever. Bye.")
+          else:
+               print("Not sure what that means... RESTART IT IS! HAHAHAHAHAHAAA (Stop putting in random numbers. Really.)\n\n")
+               start()
+
+     except ValueError:
+          print("\n\n\n\n\n\nGet out.\n\n")
+
+def redo2():
+     try:     
+          redo = int(input("\nReset? \n 1. Y \n 2. N \n\n> "))
+          if redo == 1:
+               print("Yay!")
+               weaponchoice()
           elif redo == 2:
                print("Lame, whatever. Bye.")
           else:
@@ -128,6 +144,10 @@ def go():
                      downstairsgood()
                 elif choice2 == 2:
                      print("You ignore the cry for help. The reel you are watching must be important. You hear a crash downstairs after a minute, followed by a scream.\n")
+
+                else:
+                    print("Something went wrong. Please retry")
+                    go()
 
             elif choice1 == 3:
                     print("You attempt to pocket your phone and go downstairs. They sounded urgent. "+
