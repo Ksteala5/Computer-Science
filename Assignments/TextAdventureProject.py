@@ -1,5 +1,37 @@
+name = "Input Name"
+gender = "Input Gender"
+interest = "Interest"
+weapon = "Weapon"
+
+def basementstool():
+     try:
+          print("In the basement, there is obvious breathing as well. You may need to fight. You ready the heavy stool in your hands, but you can't tell where the breathing is.")
+          fightorhide = int(input("\nFight or hide? \n\n 1. Fight \n 2. Hide"))
+          
+          if fightorhide == 1:
+               print("\n\nYou swing the stool at a faint outline of a creature when you spot it. Upon contact, the welds of the stool fail. The creature recovers quickly and tears you apart.\n")
+               enddead()
+          
+          elif fightorhide == 2:
+               print("\n\nBad choice. The creature hears you bump into something with the unweildy stool.\n")
+          
+          else:
+               print(": )")
+               basementstool()
+
+     except ValueError:
+          print("No escape \n\n\n: ) \n\n ")
+          basementstool()
+
+def enddead():
+     print("\n\n\n\nThanks for playing! You got too far in the story to be redeemed, a full reset would be more practical than a checkpoint reset, as most (or all) ways lead to death.\n\n")
+
+def endwin():
+     print("\n\nYou survived! Wow, didn't expect that. There are only a few ways to win ;)\n THANKS FOR PLAYING!!!!")
+
 def downlightoff():
-     print("You faintly make out the twisted figure of some sort of beast. On the floor, there is a corpse.")
+     print("\nYou faintly make out the twisted figure of some sort of beast. On the floor, there is a corpse.") 
+     location = int(("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
 
 def downstairsbad():
      print("\nYou make your way downstairs, phone in hand. A heavy weight is in the air, feeling like a thick slurry. The house is unnaturally dark. Audible heavy panting is heard.\n\n")
@@ -9,23 +41,54 @@ def downstairsbad():
           redo1()
      elif light == 2:
           print("You decide to not turn on the flashlight, that could give away where you are.")
+          downlightoff()
 
 def downstairsbat():
-     print("You grab your old wooden bat and head downstairs cautiously.")
+     try:     
+          print("You grab your old wooden bat and head downstairs cautiously.") #FINISH
+          location = int(("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
+          if location == 1:
+               print("You carefully maneuver to the basement, the house familiar even in darkness. Heavy, deep breathing is heard around the house.")
+               basementbat()
+
+          elif location == 2:
+               print("Should have stayed indoors. You got swarmed. You fought hard with the bat, black blood staining its splintering length before you meet your inevitable demise.")
+               enddead()
+     except ValueError:
+          print("\n\n1 OR 2 ONLY. NO LETTERS.\n\n\n")
+          downstairsbat()
 
 def downstairstrophy():
      print("You grab the trophy at the base, and head downstairs. The glint of the metal catches the eye of a bloody and horrifying creature, which kills you.")
      redo2()
 
 def downstairsstool():
-     print("\n\nYou decide to grab the heavy metal stool. Unfortunately, you aren't the strongest, so it feels quite unweildy. You head downstairs, careful not to "+
-           "bang the stool and make noise on the way down.\n")
-     print("\n")
+     try:
+          print("\n\nYou decide to grab the heavy metal stool. Unfortunately, you aren't the strongest, so it feels quite unweildy. You head downstairs, careful not to "+
+                "bang the stool and make noise on the way.\n")
+          location = int(("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
+          if location == 1:
+               print("You carefully maneuver to the basement, the house familiar even in darkness. Heavy, deep breathing is heard around the house.")
+               basementstool()
+
+          elif location == 2:
+               print("Should have stayed indoors. You got swarmed. Only a broken, red-stained stool remains on the ground.")
+               enddead()
+
+          
+     except ValueError:
+          print("Your mental foolery wont work on me.")
+          downstairsstool()
 
 def downstairsgood():
      print("\nUpon arriving downstairs, you see your "+interest+" standing a distance from the window, and staring out. They seem frightened.")
      print("They turn to look at you for a moment, before turning back to the window. 'Something weird is going on.'\n"+
            "You feel a buzz from your phone, but ignore it.")
+     location = int(("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
+     if location == 1:
+          print("Good choice. You hide in the basement. You hear crashing around the house for hours, heavy breathing approaches your location at one point. You comfort your"+interest+" ."+
+          "It leaves after a minute.\n\n ")
+          endwin()
 
 def weaponchoice():
     global weapon
@@ -81,11 +144,7 @@ def redo2():
 
      except ValueError:
           print("\n\n\n\n\n\nGet out.\n\n")
-
-name = "Input Name"
-gender = "Input Gender"
-interest = "Interest"
-weapon = "Weapon"
+####################################################################################################################################START OF STORY###########################################################################################################################################
 def start():
     global name
     global gender
@@ -138,7 +197,9 @@ def go():
                 
                 else:
                      print("Please choose 1 or 2.")
-                     
+
+########################################################################################################################################## CHOICE 2 #######################################################################################################################################                 
+
             elif choice1 == 2:
                 choice2 = int(input("'Yeah?' You call back. Your "+interest+" calls back a moment later. They sound nervous, which isn't like them."+
                                     " 'I saw something outside! Can you come down?'\n 1. Yes\n 2. No\n> "))
@@ -151,6 +212,8 @@ def go():
                 else:
                     print("Something went wrong. Please retry")
                     go()
+
+########################################################################################################################################## CHOICE 3 #######################################################################################################################################
 
             elif choice1 == 3:
                     print("You attempt to pocket your phone and go downstairs. They sounded urgent. "+
