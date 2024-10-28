@@ -9,14 +9,15 @@ def basementbat():
 def basementstool():
      try:
           print("In the basement, there is obvious breathing as well. You may need to fight. You ready the heavy stool in your hands, but you can't tell where the breathing is.")
-          fightorhide = int(input("\nFight or hide? \n\n 1. Fight \n 2. Hide"))
+          fightorhide = int(input("\nFight or hide? \n\n 1. Fight \n 2. Hide\n\n> "))
           
           if fightorhide == 1:
                print("\n\nYou swing the stool at a faint outline of a creature when you spot it. Upon contact, the welds of the stool fail. The creature recovers quickly and tears you apart.\n")
                enddead()
           
           elif fightorhide == 2:
-               print("\n\nBad choice. The creature hears you bump into something with the unweildy stool.\n")
+               print("\n\nBad choice. The creature hears you hit something with the unweildy stool.\n")
+               enddead()
           
           else:
                print(": )")
@@ -62,7 +63,7 @@ def downstairsbat():
                basementbat()
 
           elif somewhere == "2":
-               print("Should have stayed indoors. You got swarmed. You fought hard with the bat, black blood staining its splintering length before you meet your inevitable demise.")
+               print("Should have stayed indoors. You got swarmed. You fought hard with the bat, black blood staining its splintering length, 20 creatures at your feet before you meet your inevitable demise.")
                enddead()
 
           else:
