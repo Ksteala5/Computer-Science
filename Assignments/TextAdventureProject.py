@@ -3,6 +3,9 @@ gender = "Input Gender"
 interest = "Interest"
 weapon = "Weapon"
 
+def basementbat():
+     print()
+
 def basementstool():
      try:
           print("In the basement, there is obvious breathing as well. You may need to fight. You ready the heavy stool in your hands, but you can't tell where the breathing is.")
@@ -44,19 +47,22 @@ def downstairsbad():
           downlightoff()
 
 def downstairsbat():
-     try:     
+     try:
           print("You grab your old wooden bat and head downstairs cautiously.") #FINISH
-          location = int(("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
-          if location == 1:
+        
+          somewhere = str(input("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
+          if somewhere == "1":
                print("You carefully maneuver to the basement, the house familiar even in darkness. Heavy, deep breathing is heard around the house.")
                basementbat()
 
-          elif location == 2:
+          elif somewhere == "2":
                print("Should have stayed indoors. You got swarmed. You fought hard with the bat, black blood staining its splintering length before you meet your inevitable demise.")
                enddead()
+
+          else:
+               print("\n\n1 or 2.\n\n")
      except ValueError:
-          print("\n\n1 OR 2 ONLY. NO LETTERS.\n\n\n")
-          downstairsbat()
+          print("No.")
 
 def downstairstrophy():
      print("You grab the trophy at the base, and head downstairs. The glint of the metal catches the eye of a bloody and horrifying creature, which kills you.")
@@ -91,24 +97,19 @@ def downstairsgood():
           endwin()
 
 def weaponchoice():
-    global weapon
     try: 
-         weapon = int(input("You have a few items that could be used as a weapon in your room. \n 1. Wooden Bat \n 2. Metal Trophy \n 3. Metal Stool\n\n> "))
-         if weapon==1:
-              weapon = "bat"
+         weapon = str(input("You have a few items that could be used as a weapon in your room. \n 1. Wooden Bat \n 2. Metal Trophy \n 3. Metal Stool\n\n> "))
+         if weapon=="1":
               downstairsbat()
 
-         elif weapon==2:
-              weapon = "trophy"
+         elif weapon=="2":
               downstairstrophy()
 
-         elif weapon==3:
-              weapon = "stool"
+         elif weapon=="3":
               downstairsstool()
 
          else:
             print("\n Please choose 1, 2, or 3.")
-    
     
     except ValueError:
          print("\n\nNot funny. Next time, input a number like this: 1  OR  2. We already explained that."+
@@ -145,36 +146,7 @@ def redo2():
      except ValueError:
           print("\n\n\n\n\n\nGet out.\n\n")
 ####################################################################################################################################START OF STORY###########################################################################################################################################
-def start():
-    global name
-    global gender
-    global interest
-    
-    print("\n\nWelcome! This is the text adventure game made by Kaden Bartunek.\n ")
-    name = str(input("Choose your name:\n(How you want characters to refer to you)\n> ")).capitalize()
-    print("Welcome, "+name+"!")
-    
-    gender = str(input("Next, choose your gender. Please choose M, F, or O (Other):\n\n> ")).lower()
-    if gender == "m" or "f" or "o":
-        interest = str(input("Romantic interest? Please type 'B'(boyfriend), 'G'(girlfriend), or 'P'(partner).\n> ")).lower()
-        if interest == "b":
-             interest = "boyfriend"
-        elif interest == "g":
-             interest = "girlfriend"
-        elif interest == "p":
-             interest = "partner"
-        else:
-             print("Choose only b, g, or f.\n\n\n")
-             start()
-        if interest == "boyfriend" or "girlfriend" or "partner":
-            print("\n\n\nPerfect! Let's start! If you have options, answer with the corresponding number. Do not type out 'one', for example. Type '1' instead.\n\n\n")
-        else:
-             print("Please retry. Something went wrong. Sorry!")
-             start()
-    else:
-         print("Choose ONLY M, F, or O.")
-start()
-   
+
 def go():
         try:
             choice1 = int(input("You are sitting in your room, scrolling through Instagram reels on your phone.'" + name + "!' You"+
@@ -228,4 +200,36 @@ def go():
              print("\n\nNot funny. Next time, input a number like this: 1  OR  2. We already explained that."+
                    " Restart the story and read the rules this time.\n")
              start()
-go()
+
+def start():
+    global name
+    global gender
+    global interest
+    
+    print("\n\nWelcome! This is the text adventure game made by Kaden Bartunek.\n ")
+    name = str(input("Choose your name:\n(How you want characters to refer to you)\n> ")).capitalize()
+    print("Welcome, "+name+"!")
+    
+    gender = str(input("Next, choose your gender. Please choose M, F, or O (Other):\n\n> ")).lower()
+    if gender == "m" or "f" or "o":
+        interest = str(input("Romantic interest? Please type 'B'(boyfriend), 'G'(girlfriend), or 'P'(partner).\n> ")).lower()
+        if interest == "b":
+             interest = "boyfriend"
+        elif interest == "g":
+             interest = "girlfriend"
+        elif interest == "p":
+             interest = "partner"
+        else:
+             print("Choose only b, g, or f.\n\n\n")
+             start()
+        if interest == "boyfriend" or "girlfriend" or "partner":
+            print("\n\n\nPerfect! Let's start! If you have options, answer with the corresponding number. Do not type out 'one', for example. Type '1' instead.\n\n\n")
+        else:
+             print("Please retry. Something went wrong. Sorry!")
+             start()
+    else:
+         print("Choose ONLY M, F, or O.")
+    go()
+start()
+   
+
