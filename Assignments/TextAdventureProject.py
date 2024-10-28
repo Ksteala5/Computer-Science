@@ -34,7 +34,13 @@ def endwin():
 
 def downlightoff():
      print("\nYou faintly make out the twisted figure of some sort of beast. On the floor, there is a corpse.") 
-     location = int(("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
+     location = int(input("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
+     if location == 1:
+          print("You carefully head to the basement, the house filled with heavy breathing. Unfortunately, a creature resides down there.")
+          enddead()
+     elif location == 2:
+          print("You make your way outside as silently as possible. You really shouldn't have.")
+          enddead()
 
 def downstairsbad():
      print("\nYou make your way downstairs, phone in hand. A heavy weight is in the air, feeling like a thick slurry. The house is unnaturally dark. Audible heavy panting is heard.\n\n")
@@ -72,7 +78,7 @@ def downstairsstool():
      try:
           print("\n\nYou decide to grab the heavy metal stool. Unfortunately, you aren't the strongest, so it feels quite unweildy. You head downstairs, careful not to "+
                 "bang the stool and make noise on the way.\n")
-          location = int(("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
+          location = int(input("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
           if location == 1:
                print("You carefully maneuver to the basement, the house familiar even in darkness. Heavy, deep breathing is heard around the house.")
                basementstool()
@@ -87,14 +93,21 @@ def downstairsstool():
           downstairsstool()
 
 def downstairsgood():
-     print("\nUpon arriving downstairs, you see your "+interest+" standing a distance from the window, and staring out. They seem frightened.")
-     print("They turn to look at you for a moment, before turning back to the window. 'Something weird is going on.'\n"+
-           "You feel a buzz from your phone, but ignore it.")
-     location = int(("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
-     if location == 1:
-          print("Good choice. You hide in the basement. You hear crashing around the house for hours, heavy breathing approaches your location at one point. You comfort your"+interest+" ."+
-          "It leaves after a minute.\n\n ")
-          endwin()
+     try:
+          print("\nUpon arriving downstairs, you see your "+interest+" standing a distance from the window, and staring out. They seem frightened.")
+          print("They turn to look at you for a moment, before turning back to the window. 'Something weird is going on.'\n"+
+                "You feel a buzz from your phone, but ignore it.")
+          location = int(input("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
+          if location == 1:
+               print("Good choice. You hide in the basement. You hear crashing around the house for hours, heavy breathing approaches your location at one point. You comfort your"+interest+" ."+
+               "It leaves after a minute.\n\n ")
+               endwin()
+          elif location==2:
+               print("You get swarmed by horrifying monsters, torn apart while standing.")
+               redo1()
+     except ValueError:
+          print("Please don't.")
+          downstairsgood()
 
 def weaponchoice():
     try: 
@@ -231,5 +244,3 @@ def start():
          print("Choose ONLY M, F, or O.")
     go()
 start()
-   
-
