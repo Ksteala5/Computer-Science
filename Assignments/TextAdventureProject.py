@@ -1,6 +1,6 @@
 name = "Input Name"     # Fun interactive bit
-gender = "Input Gender" # Useless but it makes people think they have more control than they actually do, adds fake depth
-interest = "Interest"   # Probably gonna die
+gender = "Input Gender" # Useless but it makes people think they have more control than they actually do, adds fake depth. Also buggy for some reason?
+interest = "Interest"   # Dont ignore cries for help
 weapon = "Weapon"       # Only bat wins the game
 
 import time 
