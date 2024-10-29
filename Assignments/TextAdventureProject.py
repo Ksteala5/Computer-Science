@@ -34,6 +34,9 @@ def typewriteslowest(text):
         time.sleep(0.15) 
         #print(text)
 
+def secret():
+     typewriteslowest("???")
+
 def basementbat(): # number 2 of the 2 possible ways to win
      try:     
           typewrite("Thankfully, you reach the stairs to the basement. You can already hear the sound of a creature down there, but don't want to turn back now.")
@@ -259,6 +262,10 @@ def go():                         # Wanted to test out nested if statements... y
                     typewrite("You attempt to pocket your phone and go downstairs. They sounded urgent. "+
                           "Unfortunately, you fall down the stairs while still fumbling with your phone, breaking your neck. Tough luck, retry?")
                     redo1()
+            
+            elif choice1 ==13211:
+                    print("[[https://www.youtube.com/watch?v=C6jEJraEu6Q&ab_channel=DameAndThatGame]]")
+                    secret()
 
             else:
                  print("Please try again, something went wrong.")
