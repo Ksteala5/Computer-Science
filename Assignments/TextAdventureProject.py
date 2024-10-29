@@ -56,7 +56,7 @@ def basementstool():
           fightorhide = int(input("\nFight or hide? \n\n 1. Fight \n 2. Hide\n\n> "))
           
           if fightorhide == 1:
-               typewrite("\n\nYou swing the stool at a faint outline of a creature when you spot it. Upon contact, the welds of the stool fail. The creature recovers quickly and tears you apart.\n")
+               typewrite("\n\nYou swing the stool at a faint outline of a creature when you spot it. Upon contact, the welds of the stool fail, and it breaks apart. The creature recovers quickly and tears you apart.\n")
                enddead()
           
           elif fightorhide == 2:
