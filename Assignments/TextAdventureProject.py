@@ -25,7 +25,7 @@ def typewriteslow(text):
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(0.077) 
-        #print(text)
+        #print(text) 
 
 def typewriteslowest(text):
     for char in text:
