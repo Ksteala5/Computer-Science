@@ -193,7 +193,7 @@ def redo1():
                start()
 
      except ValueError:
-          typewriteslow("\n\n\n\n\n\nI explained this. Get out.\n\n")
+          typewrite("\n\n\n\n\n\nI explained this. Get out.\n\n")
 
 def redo2():
      try:     
@@ -282,7 +282,7 @@ def start():
     typewrite("Welcome, "+name+"!\n")
     
     gender = str(input("\nNext, choose your gender. Please choose M, F, or O (Other):\n\n> ")).lower()
-    if gender == "m" or "f" or "o":
+    if gender == "m" or "f" or "o" or "m " or "f " or "o ":
         typewrite("Romantic interest? Please type 'B'(boyfriend), 'G'(girlfriend), or 'P'(partner).")
         interest = str(input("\n> ")).lower()
         if interest == "b":
