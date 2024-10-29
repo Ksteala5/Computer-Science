@@ -147,12 +147,12 @@ def downstairsgood(): # number 1 of the 2 possible ways to win
           location = int(input("\nYou get the feeling you need to hide somewhere.\n 1. Basement \n 2. Shed \n\n> "))
          
           if location == 1:
-               typewrite("Good choice. You hide in the basement, locking the door to a room and hiding in the attached bathroom. You hear crashing around the house for hours, heavy breathing approaches your location at one point. You comfort your"+interest+" ."+
+               typewrite("Good choice. You hide in the basement, locking the door to a room and hiding in the attached bathroom. You hear crashing around the house for hours, heavy breathing approaches your location at one point. You comfort your "+interest+"."+
                "It leaves after a minute.\n\n ")
                endwin()
           
           elif location==2:
-               typewrite("You get swarmed by horrifying monsters, torn apart while standing.")
+               typewrite("You get swarmed by horrifying creatures, torn apart while standing.")
                redo1()
 
      except ValueError:
@@ -187,13 +187,13 @@ def redo1():
                print("Yay!")
                go()
           elif redo == 2:
-               print("Lame, whatever. Bye.")
+               print("Bye.")
           else:
                print("\n\nNot sure what that means... RESTART IT IS! HAHAHAHAHAHAAA (Stop putting in random numbers. Really.)\n\n")
                start()
 
      except ValueError:
-          print("\n\n\n\n\n\nI explained this. Get out.\n\n")
+          typewriteslow("\n\n\n\n\n\nI explained this. Get out.\n\n")
 
 def redo2():
      try:     
@@ -224,7 +224,7 @@ def go():                         # Wanted to test out nested if statements... y
              
                 elif choice2 == 2:
                      typewritefast("You watch another reel. As you are watching, a notification pops up. It reads: 'WARNING: THIS IS A PUBLIC SERVICE ANNOUNCMENT.")
-                     typewritefast("Creatures have been spotted around your area. They are of unknown origin and seem to be extremely hostile. Stay indoors, may God have mercy on us all.'\n\n")
+                     typewritefast(" Creatures have been spotted around your area. They are of unknown origin and seem to be extremely hostile. Stay indoors, may God have mercy on us all.'\n\n")
                      typewrite("It lists many areas where the creatures have appeared. You decide to grab a weapon and head downstairs.\n\n")
                      weaponchoice()
 
