@@ -55,7 +55,7 @@ print(numvowels)
 #Print Multiplication Table
 
 try:
-    multi = int(random.randint(0,11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111))
+    multi = int(random.randint(0,111111111111))
     for i in range(0,multi+1):
         print(str(multi)+ " x "+str(i)+ " = " + str(multi*i))
 except ValueError:
