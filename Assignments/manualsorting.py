@@ -1,5 +1,6 @@
 import random
 numbers = [random.randint(1,101),random.randint(1,101),random.randint(1,101),random.randint(1,101),random.randint(1,101),]
+# numbers = [10,9,8,7,6]
 print(numbers)
 def bubble_sort(n):
     steps = 0
